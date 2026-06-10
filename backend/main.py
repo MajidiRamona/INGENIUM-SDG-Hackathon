@@ -10,6 +10,7 @@ from db.database import init_db
 from api.opportunities import router as opp_router
 from api.analytics import router as analytics_router
 from api.agents import router as agents_router
+from api.memo import router as memo_router
 
 
 @asynccontextmanager
@@ -46,6 +47,7 @@ app.add_middleware(
 app.include_router(opp_router)
 app.include_router(analytics_router)
 app.include_router(agents_router)
+app.include_router(memo_router)
 
 
 @app.get("/health")
